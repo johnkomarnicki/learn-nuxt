@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .hero {
+    background-image: radial-gradient(
+        circle at center,
+        transparent,
+        #0f172a 85%
+      ),
+      url("/box-bg-green.png");
+    @apply bg-no-repeat bg-cover;
+  }
+}
