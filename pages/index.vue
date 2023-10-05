@@ -2,6 +2,9 @@
 const client = useSupabaseClient();
 
 const signedUp = ref(false);
+const loading = ref(false);
+const apiError = ref(false);
+const errorMsg = ref("");
 const formState = ref({
   name: "",
   email: "",
@@ -15,16 +18,46 @@ const validate = (state) => {
 };
 
 async function submit(event) {
-  const { data, error } = await client
-    .from("users")
-    .insert([
-      {
-        name: event.data.name,
-        email: event.data.email,
-      },
-    ])
-    .select();
-  signedUp.value = true;
+  apiError.value = false;
+  loading.value = true;
+  try {
+    // Test for valid email format
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!emailPattern.test(event.data.email)) {
+      throw "Please enter a valid email address";
+    }
+
+    // Check for existing email
+    const { data: users, error: userError } = await client
+      .from("users")
+      .select("*")
+      .eq("email", event.data.email);
+
+    if (users.length) {
+      throw "This email already has already been added.";
+    }
+
+    // Create new entry
+    const { data, error } = await client
+      .from("users")
+      .insert([
+        {
+          name: event.data.name,
+          email: event.data.email,
+        },
+      ])
+      .select();
+    if (error) {
+      throw "Opps! Something went wrong, please try again.";
+    }
+    signedUp.value = true;
+  } catch (err) {
+    apiError.value = true;
+    errorMsg.value = err;
+  } finally {
+    loading.value = false;
+  }
 }
 
 function resetForm() {
@@ -69,7 +102,7 @@ useSeoMeta({
           class="mb-8 shadow-md"
         />
         <h1
-          class="text-center text-4xl sm:text-5xl md:text-6xl md:leading-[70px] mb-4 font-bold"
+          class="text-wrap-balance text-center text-4xl sm:text-5xl md:text-6xl md:leading-[70px] mb-4 font-bold"
         >
           Build Modern Applications With Nuxt!
         </h1>
@@ -101,8 +134,12 @@ useSeoMeta({
             size="xl"
             label="Join the waitlist"
             class="w-full sm:w-fit self-start shadow-md"
+            :loading="loading"
           />
         </UForm>
+        <p v-if="apiError" class="text-red-500">
+          {{ errorMsg }}
+        </p>
         <div
           class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-16"
         >

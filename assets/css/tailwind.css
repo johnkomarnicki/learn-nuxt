@@ -12,4 +12,8 @@
       url("/box-bg-green.png");
     @apply bg-no-repeat bg-cover;
   }
+
+  .text-wrap-balance {
+    text-wrap: balance;
+  }
 }
