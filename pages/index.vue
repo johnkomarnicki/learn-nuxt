@@ -106,7 +106,7 @@ useSeoMeta({
         >
           Build Modern Applications With Nuxt!
         </h1>
-        <p class="text-sm sm:text-base md:text-lg text-center mb-12">
+        <p class="text-wrap-balance text-sm sm:text-base md:text-lg text-center mb-12">
           A premium
           <span class="text-primary font-extrabold">project-based</span> course
           that will teach you how to build applications using Nuxt 3.
@@ -174,4 +174,5 @@ useSeoMeta({
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
