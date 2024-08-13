@@ -73,13 +73,13 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="h-screen hero">
+  <div class="min-h-screen hero">
     <UModal v-model="signedUp">
       <div class="flex flex-col justify-center items-center px-12 py-12">
         <h2 class="font-bold text-3xl mb-4">Confirmed!</h2>
         <p class="text-center mb-8">
-          Thank you for joining the waitlist. You will receive more updates soon
-          on the release of the course!
+          Thank you for joining the waitlist. You will receive more updates soon on the release of
+          the course!
         </p>
         <UButton
           @click="resetForm"
@@ -93,14 +93,9 @@ useSeoMeta({
       </div>
     </UModal>
     <div class="container sm:max-w-screen-sm md:max-w-screen-tablet">
-      <div class="py-24 flex flex-col items-center justify-center">
+      <div class="pt-24 flex flex-col items-center justify-center">
         <img class="w-[75px] mb-8" src="/nuxt-icon-white.png" alt="" />
-        <UBadge
-          label="Coming soon"
-          variant="outline"
-          size="lg"
-          class="mb-8 shadow-md"
-        />
+        <UBadge label="Early Access" variant="outline" size="lg" class="mb-8 shadow-md" />
         <h1
           class="text-wrap-balance text-center text-4xl sm:text-5xl md:text-6xl md:leading-[70px] mb-4 font-bold"
         >
@@ -108,10 +103,10 @@ useSeoMeta({
         </h1>
         <p class="text-wrap-balance text-sm sm:text-base md:text-lg text-center mb-12">
           A premium
-          <span class="text-primary font-extrabold">project-based</span> course
-          that will teach you how to build applications using Nuxt 3.
+          <span class="text-primary font-extrabold">project-based</span> course that will teach you
+          how to build applications using Nuxt 3.
         </p>
-        <UForm
+        <!-- <UForm
           :validate="validate"
           @submit="submit"
           :state="formState"
@@ -121,12 +116,7 @@ useSeoMeta({
             <UInput v-model="formState.name" size="xl" placeholder="Name" />
           </UFormGroup>
           <UFormGroup name="email">
-            <UInput
-              v-model="formState.email"
-              size="xl"
-              type="email"
-              placeholder="Email"
-            />
+            <UInput v-model="formState.email" size="xl" type="email" placeholder="Email" />
           </UFormGroup>
           <UButton
             type="submit"
@@ -139,15 +129,9 @@ useSeoMeta({
         </UForm>
         <p v-if="apiError" class="text-red-500">
           {{ errorMsg }}
-        </p>
-        <div
-          class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-16"
-        >
-          <img
-            class="w-[75px] rounded-full shadow-md"
-            src="/author.png"
-            alt=""
-          />
+        </p> -->
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <img class="w-[75px] rounded-full shadow-md" src="/author.png" alt="" />
           <div class="flex flex-col items-center sm:items-start">
             <p class="font-bold text-lg sm:text-2xl">by John Komarnicki</p>
             <p class="text-center text-sm sm:text-base">
@@ -159,11 +143,7 @@ useSeoMeta({
                 YouTube Content Creator</a
               >
               & Founder of
-              <a
-                href="https://www.webdevdaily.io/"
-                target="_blank"
-                class="text-primary underline"
-              >
+              <a href="https://www.webdevdaily.io/" target="_blank" class="text-primary underline">
                 WebDevDaily
               </a>
             </p>
@@ -171,8 +151,31 @@ useSeoMeta({
         </div>
       </div>
     </div>
+    <div class="container pb-24">
+      <hr class="my-16 border-white/30" />
+      <div class="flex flex-col items-center">
+        <h1 class="text-5xl mb-4 font-bold">$39.99</h1>
+        <h2 class="text-4xl mb-2 text-primary font-semibold">Join Early Preview</h2>
+        <p>During early preview, get at least 30% off the final price.</p>
+        <hr class="my-5 w-20 border-primary border-2 items-center justify-center" />
+        <div class="mb-8">
+          <p>The early preview version includes:</p>
+          <ul class="list-disc list-inside">
+            <li>20 lessons (1 project)</li>
+            <li>2 hours of content</li>
+            <li>All future course content</li>
+            <li>Private Discord Server</li>
+          </ul>
+        </div>
+        <UButton
+          to="https://john-komarnicki.teachable.com/purchase?product_id=5719002"
+          target="_blank"
+          size="xl"
+          label="Purchase now"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
