@@ -22,7 +22,18 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "@nuxtjs/supabase"],
+
+  modules: ["@nuxt/ui", "@nuxtjs/supabase", "@nuxt/image", "@nuxtjs/plausible"],
+
+  colorMode: {
+    preference: "dark",
+  },
+
+  plausible: {
+    // Prevent tracking on localhost
+    domain: "learnnuxt.dev",
+    ignoredHostnames: ["localhost"],
+  },
 
   supabase: {
     redirect: false,

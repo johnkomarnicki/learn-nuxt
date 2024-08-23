@@ -1,99 +1,46 @@
 <script setup>
-const client = useSupabaseClient();
-
-const signedUp = ref(false);
-const loading = ref(false);
-const apiError = ref(false);
-const errorMsg = ref("");
-const formState = ref({
-  name: "",
-  email: "",
-});
-
-const validate = (state) => {
-  const errors = [];
-  if (!state.name) errors.push({ path: "name", message: "Required" });
-  if (!state.email) errors.push({ path: "email", message: "Required" });
-  return errors;
-};
-
-async function submit(event) {
-  apiError.value = false;
-  loading.value = true;
-  try {
-    // Test for valid email format
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    if (!emailPattern.test(event.data.email)) {
-      throw "Please enter a valid email address";
-    }
-
-    // Check for existing email
-    const { data: users, error: userError } = await client
-      .from("users")
-      .select("*")
-      .eq("email", event.data.email);
-
-    if (users.length) {
-      throw "This email already has already been added.";
-    }
-
-    // Create new entry
-    const { data, error } = await client
-      .from("users")
-      .insert([
-        {
-          name: event.data.name,
-          email: event.data.email,
-        },
-      ])
-      .select();
-    if (error) {
-      throw "Opps! Something went wrong, please try again.";
-    }
-    signedUp.value = true;
-  } catch (err) {
-    apiError.value = true;
-    errorMsg.value = err;
-  } finally {
-    loading.value = false;
-  }
-}
-
-function resetForm() {
-  formState.value.name = "";
-  formState.value.email = "";
-  signedUp.value = false;
-}
+const features = ref([
+  {
+    title: "Basics of Nuxt",
+    description:
+      "Start by building a simple recipe application to get hands-on experience with Nuxt core concepts.",
+    image: "/nuxt-course-basics.png",
+  },
+  {
+    title: "Advanced Nuxt Concepts",
+    description: "Dive deeper into topics like server routes, middleware, data caching, and more.",
+    image: "/nuxt-course-advanced-concepts.png",
+  },
+  {
+    title: "Third-Party Tools",
+    description:
+      "Explore modules like Supabase, Stripe, Vercel, and others to enhance your applications.",
+    image: "/nuxt-course-third-party.png",
+  },
+  // {
+  //   title: "Coding Exercises",
+  //   description: "Practice your skills with hands-on coding exercises throughout the course.",
+  //   image: "/nuxt-course-basics.png",
+  // },
+  {
+    title: "Project Building",
+    description:
+      "Apply your knowledge by creating several applications, including a full-stack app using Nuxt, Supabase, and Stripe.",
+    image: "/nuxt-course-project-building.png",
+  },
+]);
 
 useSeoMeta({
   title: "Build Modern Applications With Nuxt 3",
-  description: "Build Modern Applications With Nuxt 3",
+  description:
+    "A premium project-based course that will teach you how to build applications using Nuxt.",
 });
 </script>
 
 <template>
-  <div class="min-h-screen hero">
-    <UModal v-model="signedUp">
-      <div class="flex flex-col justify-center items-center px-12 py-12">
-        <h2 class="font-bold text-3xl mb-4">Confirmed!</h2>
-        <p class="text-center mb-8">
-          Thank you for joining the waitlist. You will receive more updates soon on the release of
-          the course!
-        </p>
-        <UButton
-          @click="resetForm"
-          type="button"
-          variant="outline"
-          size="xl"
-          label="Close"
-          :block="true"
-          class="shadow-md"
-        />
-      </div>
-    </UModal>
+  <div class="hero py-24">
     <div class="container sm:max-w-screen-sm md:max-w-screen-tablet">
-      <div class="pt-24 flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-center">
         <img class="w-[75px] mb-8" src="/nuxt-icon-white.png" alt="" />
         <UBadge label="Early Access" variant="outline" size="lg" class="mb-8 shadow-md" />
         <h1
@@ -101,36 +48,14 @@ useSeoMeta({
         >
           Build Modern Applications With Nuxt!
         </h1>
-        <p class="text-wrap-balance text-sm sm:text-base md:text-lg text-center mb-12">
+        <p class="text-wrap-balance text-sm sm:text-base md:text-lg text-center mb-6">
           A premium
           <span class="text-primary font-extrabold">project-based</span> course that will teach you
-          how to build applications using Nuxt 3.
+          how to build applications using Nuxt.
         </p>
-        <!-- <UForm
-          :validate="validate"
-          @submit="submit"
-          :state="formState"
-          class="flex flex-col max-w-screen-sm w-full sm:flex-row gap-6 sm:gap-8 mb-8"
-        >
-          <UFormGroup name="name">
-            <UInput v-model="formState.name" size="xl" placeholder="Name" />
-          </UFormGroup>
-          <UFormGroup name="email">
-            <UInput v-model="formState.email" size="xl" type="email" placeholder="Email" />
-          </UFormGroup>
-          <UButton
-            type="submit"
-            variant="outline"
-            size="xl"
-            label="Join the waitlist"
-            class="w-full sm:w-fit self-start shadow-md"
-            :loading="loading"
-          />
-        </UForm>
-        <p v-if="apiError" class="text-red-500">
-          {{ errorMsg }}
-        </p> -->
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <UButton to="#purchase" size="xl" label="Skip to Purchase" />
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
           <img class="w-[75px] rounded-full shadow-md" src="/author.png" alt="" />
           <div class="flex flex-col items-center sm:items-start">
             <p class="font-bold text-lg sm:text-2xl">by John Komarnicki</p>
@@ -151,28 +76,85 @@ useSeoMeta({
         </div>
       </div>
     </div>
-    <div class="container pb-24">
-      <hr class="my-16 border-white/30" />
-      <div class="flex flex-col items-center">
-        <h1 class="text-5xl mb-4 font-bold">$39.99</h1>
-        <h2 class="text-4xl mb-2 text-primary font-semibold">Join Early Preview</h2>
-        <p>During early preview, get at least 30% off the final price.</p>
-        <hr class="my-5 w-20 border-primary border-2 items-center justify-center" />
-        <div class="mb-8">
-          <p>The early preview version includes:</p>
-          <ul class="list-disc list-inside">
-            <li>20 lessons (1 project)</li>
-            <li>2 hours of content</li>
-            <li>All future course content</li>
-            <li>Private Discord Server</li>
-          </ul>
+  </div>
+  <!-- Course Details -->
+  <div class="py-16 bg-gradient-to-b from-gray-900/50 to-gray-700/50">
+    <div class="container max-w-screen-md">
+      <h2 class="font-medium text-4xl mb-1 text-center">What's In The Course?</h2>
+      <p class="text-lg text-center max-w-screen-tablet mx-auto text-wrap-balance">
+        In this course, we'll dive into building modern applications with Nuxt. The aim is to give
+        you practical insights and a realistic approach to developing production-ready applications
+        using Nuxt.
+      </p>
+      <div class="flex flex-col gap-20 py-16">
+        <div
+          v-for="(feature, index) in features"
+          :key="index"
+          class="flex flex-col items-center gap-10 md:flex-row md:gap-24"
+        >
+          <div
+            class="relative flex basis-[45%] order-2"
+            :class="index % 2 === 0 ? 'md:order-1 md:justify-start' : 'md:order-2 md:justify-end'"
+          >
+            <NuxtImg
+              v-if="index !== 1"
+              sizes="sm:100vw md:50vw"
+              format="webp"
+              class="rounded-md"
+              :src="feature.image"
+            />
+            <AdvancedFeatures v-else />
+          </div>
+          <div
+            class="flex flex-1 flex-col items-center text-center text-font-color md:items-start md:text-start"
+            :class="index % 2 === 0 ? 'md:order-2' : 'md:order-1'"
+          >
+            <div class="flex mb-2 gap-2 items-center flex-wrap">
+              <h3 class="text-wrap-balance text-3xl font-medium lg:text-4xl">
+                {{ feature.title }}
+              </h3>
+              <UBadge size="md" v-if="index === 3" label="Coming Soon" />
+            </div>
+            <p class="text-wrap-balance text-lg">
+              {{ feature.description }}
+            </p>
+            <UButton
+              target="_blank"
+              to="https://nuxt-course-beta.vercel.app/"
+              icon="heroicons:globe-alt-solid"
+              class="mt-4"
+              v-if="index === 0"
+              label="Preview Demo"
+              size="lg"
+            />
+          </div>
         </div>
-        <UButton
-          to="https://john-komarnicki.teachable.com/purchase?product_id=5719002"
-          target="_blank"
-          size="xl"
-          label="Purchase now"
-        />
+      </div>
+      <hr class="my-16 border-white/35" />
+      <div id="purchase" class="container py-16">
+        <div class="flex flex-col items-center">
+          <h1 class="text-5xl mb-4 font-bold">$39.99</h1>
+          <h2 class="text-4xl mb-2 text-primary font-semibold text-center">Join Early Preview</h2>
+          <p class="text-center text-wrap-balance">
+            During early preview, get at least 30% off the final price.
+          </p>
+          <hr class="my-5 w-20 border-primary border-2 items-center justify-center" />
+          <div class="mb-8">
+            <p>The early preview version includes:</p>
+            <ul class="list-disc list-inside">
+              <li>20 lessons (1 project)</li>
+              <li>2 hours of content</li>
+              <li>All future course content</li>
+              <li>Private Discord Server</li>
+            </ul>
+          </div>
+          <UButton
+            to="https://john-komarnicki.teachable.com/purchase?product_id=5719002"
+            target="_blank"
+            size="xl"
+            label="Purchase now"
+          />
+        </div>
       </div>
     </div>
   </div>
