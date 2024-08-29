@@ -53,7 +53,12 @@ useSeoMeta({
           <span class="text-primary font-extrabold">project-based</span> course that will teach you
           how to build applications using Nuxt.
         </p>
-        <UButton to="#purchase" size="xl" label="Skip to Purchase" />
+        <UButton
+          to="https://john-komarnicki.teachable.com/purchase?product_id=5719002"
+          target="_blank"
+          size="xl"
+          label="Purchase now"
+        />
 
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
           <img class="w-[75px] rounded-full shadow-md" src="/author.png" alt="" />
