@@ -34,6 +34,16 @@ useSeoMeta({
   title: "Build Modern Applications With Nuxt 3",
   description:
     "A premium project-based course that will teach you how to build applications using Nuxt.",
+  ogTitle: "Build Modern Applications With Nuxt 3",
+  ogDescription:
+    "A premium project-based course that will teach you how to build applications using Nuxt.",
+  ogImage: "https://www.learnnuxt.dev/nuxt-course-thumbnail.png",
+  ogUrl: "https://www.learnnuxt.dev/",
+  twitterTitle: "Build Modern Applications With Nuxt 3",
+  twitterDescription:
+    "A premium project-based course that will teach you how to build applications using Nuxt.",
+  twitterImage: "https://www.learnnuxt.dev/nuxt-course-thumbnail.png",
+  twitterCard: "summary_large_image",
 });
 </script>
 
