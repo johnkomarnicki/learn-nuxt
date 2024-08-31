@@ -95,57 +95,64 @@ useSeoMeta({
   <!-- Course Details -->
   <div class="py-16 bg-gradient-to-b from-gray-900/50 to-gray-700/50">
     <div class="container max-w-screen-md">
-      <h2 class="font-medium text-4xl mb-1 text-center">What's In The Course?</h2>
-      <p class="text-lg text-center max-w-screen-tablet mx-auto text-wrap-balance">
-        In this course, we'll dive into building modern applications with Nuxt. The aim is to give
-        you practical insights and a realistic approach to developing production-ready applications
-        using Nuxt.
-      </p>
-      <div class="flex flex-col gap-20 py-16">
-        <div
-          v-for="(feature, index) in features"
-          :key="index"
-          class="flex flex-col items-center gap-10 md:flex-row md:gap-24"
-        >
+      <section class="py-12">
+        <h2 class="font-medium text-4xl mb-1 text-center">What's In The Course?</h2>
+        <p class="text-lg text-center max-w-screen-tablet mx-auto text-wrap-balance">
+          Dive into building modern applications with Nuxt. The aim is to give you practical
+          insights and a realistic approach to developing production-ready applications using Nuxt.
+        </p>
+        <div class="flex flex-col gap-20 py-16">
           <div
-            class="relative flex basis-[45%] order-2"
-            :class="index % 2 === 0 ? 'md:order-1 md:justify-start' : 'md:order-2 md:justify-end'"
+            v-for="(feature, index) in features"
+            :key="index"
+            class="flex flex-col items-center gap-10 md:flex-row md:gap-24"
           >
-            <NuxtImg
-              v-if="index !== 1"
-              sizes="sm:100vw md:50vw"
-              format="webp"
-              class="rounded-md"
-              :src="feature.image"
-            />
-            <AdvancedFeatures v-else />
-          </div>
-          <div
-            class="flex flex-1 flex-col items-center text-center text-font-color md:items-start md:text-start"
-            :class="index % 2 === 0 ? 'md:order-2' : 'md:order-1'"
-          >
-            <div class="flex mb-2 gap-2 items-center flex-wrap">
-              <h3 class="text-wrap-balance text-3xl font-medium lg:text-4xl">
-                {{ feature.title }}
-              </h3>
-              <UBadge size="md" v-if="index === 3" label="Coming Soon" />
+            <div
+              class="relative flex basis-[45%] order-2"
+              :class="index % 2 === 0 ? 'md:order-1 md:justify-start' : 'md:order-2 md:justify-end'"
+            >
+              <NuxtImg
+                v-if="index !== 1"
+                sizes="sm:100vw md:50vw"
+                format="webp"
+                class="rounded-md"
+                :src="feature.image"
+              />
+              <AdvancedFeatures v-else />
             </div>
-            <p class="text-wrap-balance text-lg">
-              {{ feature.description }}
-            </p>
-            <UButton
-              target="_blank"
-              to="https://nuxt-course-beta.vercel.app/"
-              icon="heroicons:globe-alt-solid"
-              class="mt-4"
-              v-if="index === 0"
-              label="Preview Demo"
-              size="lg"
-            />
+            <div
+              class="flex flex-1 flex-col items-center text-center text-font-color md:items-start md:text-start"
+              :class="index % 2 === 0 ? 'md:order-2' : 'md:order-1'"
+            >
+              <div class="flex mb-2 gap-2 items-center flex-wrap">
+                <h3 class="text-wrap-balance text-3xl font-medium lg:text-4xl">
+                  {{ feature.title }}
+                </h3>
+                <UBadge size="md" v-if="index === 3" label="Coming Soon" />
+              </div>
+              <p class="text-wrap-balance text-lg">
+                {{ feature.description }}
+              </p>
+              <UButton
+                target="_blank"
+                to="https://nuxt-course-beta.vercel.app/"
+                icon="heroicons:globe-alt-solid"
+                class="mt-4"
+                v-if="index === 0"
+                label="Preview Demo"
+                size="lg"
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <hr class="my-16 border-white/35" />
+      </section>
+      <hr class="my-12 border-white/35" />
+      <section class="py-12 flex flex-col max-w-screen-sm mx-auto">
+        <h2 class="font-medium text-4xl mb-4 text-center">Curriculum</h2>
+        <CourseContent />
+        <p class="text-center mt-8">More lessons coming soon!</p>
+      </section>
+      <hr class="my-12 border-white/35" />
       <div id="purchase" class="container py-16">
         <div class="flex flex-col items-center">
           <h1 class="text-5xl mb-4 font-bold">$39.99</h1>
