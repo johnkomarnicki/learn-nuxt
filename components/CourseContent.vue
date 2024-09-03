@@ -20,7 +20,7 @@ const sectionOneLessons = [
   { lesson: 17, title: "Handling Simple API Errors" },
   { lesson: 18, title: "Setting Metadata With useSeoMeta()" },
   { lesson: 19, title: "Project Cleanup" },
-  { lesson: 20, title: "Deploy To Vercel" },
+  //   { lesson: 20, title: "Deploy To Vercel" },
 ];
 </script>
 
