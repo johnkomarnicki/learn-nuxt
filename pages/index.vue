@@ -64,7 +64,7 @@ useSeoMeta({
           how to build applications using Nuxt.
         </p>
         <UButton
-          to="https://john-komarnicki.teachable.com/purchase?product_id=5719002"
+          to="https://john-komarnicki.teachable.com/purchase?product_id=5955613"
           target="_blank"
           size="xl"
           label="Purchase now"
@@ -147,15 +147,17 @@ useSeoMeta({
         </div>
       </section>
       <hr class="my-12 border-white/35" />
-      <section class="py-12 flex flex-col max-w-screen-sm mx-auto">
+      <section class="py-12 flex flex-col max-w-screen-md mx-auto">
         <h2 class="font-medium text-4xl mb-4 text-center">Curriculum</h2>
-        <CourseContent />
+        <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
+          <CourseContent />
+        </div>
         <p class="text-center mt-8">More lessons coming soon!</p>
       </section>
       <hr class="my-12 border-white/35" />
       <div id="purchase" class="container py-16">
         <div class="flex flex-col items-center">
-          <h1 class="text-5xl mb-4 font-bold">$39.99</h1>
+          <h1 class="text-5xl mb-4 font-bold">$49.99</h1>
           <h2 class="text-4xl mb-2 text-primary font-semibold text-center">Join Early Preview</h2>
           <p class="text-center text-wrap-balance">
             During early preview, get at least 30% off the final price.
@@ -164,8 +166,8 @@ useSeoMeta({
           <div class="mb-8">
             <p>The early preview version includes:</p>
             <ul class="list-disc list-inside">
-              <li>20 lessons (1 project)</li>
-              <li>2 hours of content</li>
+              <li>28 lessons (1 project)</li>
+              <li>3 hours of content</li>
               <li>All future course content</li>
               <li>Private Discord Server</li>
             </ul>

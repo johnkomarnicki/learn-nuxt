@@ -22,15 +22,41 @@ const sectionOneLessons = [
   { lesson: 19, title: "Project Cleanup" },
   //   { lesson: 20, title: "Deploy To Vercel" },
 ];
+const sectionTwoLessons = [
+  { lesson: 0, title: "What is Nuxt UI?" },
+  { lesson: 1, title: "Install & Setup" },
+  { lesson: 2, title: "Using Nuxt UI Components" },
+  { lesson: 3, title: "Color Theming" },
+  { lesson: 4, title: "Modifying Components" },
+  { lesson: 5, title: "Dark Mode Configuration" },
+  { lesson: 6, title: "Using Icons" },
+  { lesson: 7, title: "Configure Recipe Application With Nuxt UI" },
+];
 </script>
 
 <template>
   <div class="flex flex-col border px-6 py-4 rounded-md max-h-[400px]">
-    <h1 class="text-2xl mb-2">Module 1 - Nuxt Basics (Recipe Application)</h1>
+    <h1 class="text-xl mb-2">
+      Module 1 - Nuxt Basics <span class="text-lg">(Recipe Application)</span>
+    </h1>
     <p class="mb-4 text-sm">Learn the basics of Nuxt by building a recipe application.</p>
-    <div class="flex flex-col gap-2 overflow-scroll">
+    <div class="mt-auto flex flex-col gap-2 overflow-scroll">
       <div
         v-for="lesson in sectionOneLessons"
+        class="flex bg-gray-700/50 py-3 px-4 gap-2 rounded-md shadow"
+      >
+        <span>
+          Lesson {{ lesson.lesson + 1 }}: <span class="font-semibold">{{ lesson.title }}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col border px-6 py-4 rounded-md max-h-[400px]">
+    <h1 class="text-xl mb-2">Module 2 - Nuxt UI</h1>
+    <p class="mb-4 text-sm">Explore Nuxt UI, a modern UI library for building web applications.</p>
+    <div class="flex flex-col gap-2 overflow-scroll">
+      <div
+        v-for="lesson in sectionTwoLessons"
         class="flex bg-gray-700/50 py-3 px-4 gap-2 rounded-md shadow"
       >
         <span>
