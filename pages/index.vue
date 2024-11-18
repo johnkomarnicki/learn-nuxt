@@ -63,12 +63,21 @@ useSeoMeta({
           <span class="text-primary font-extrabold">project-based</span> course that will teach you
           how to build applications using Nuxt.
         </p>
-        <UButton
-          to="https://john-komarnicki.teachable.com/purchase?product_id=5955613"
-          target="_blank"
-          size="xl"
-          label="Purchase now"
-        />
+        <div class="flex gap-2">
+          <UButton
+            to="https://sso.teachable.com/secure/1251673/identity/login"
+            target="_blank"
+            size="xl"
+            variant="outline"
+            label="Login"
+          />
+          <UButton
+            to="https://john-komarnicki.teachable.com/purchase?product_id=5955613"
+            target="_blank"
+            size="xl"
+            label="Purchase now"
+          />
+        </div>
 
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
           <img class="w-[75px] rounded-full shadow-md" src="/author.png" alt="" />
@@ -173,11 +182,21 @@ useSeoMeta({
             </ul>
           </div>
           <UButton
-            to="https://john-komarnicki.teachable.com/purchase?product_id=5719002"
+            to="https://john-komarnicki.teachable.com/purchase?product_id=5955613"
             target="_blank"
             size="xl"
             label="Purchase now"
           />
+          <p class="mt-12">
+            Already purchased?
+            <ULink
+              class="font-bold"
+              target="_blank"
+              to="https://sso.teachable.com/secure/1251673/identity/login"
+            >
+              Login here
+            </ULink>
+          </p>
         </div>
       </div>
     </div>
