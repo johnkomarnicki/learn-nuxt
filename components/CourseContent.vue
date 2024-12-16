@@ -10,7 +10,7 @@ const modules = [
     duration: "1 Hour 17 Min",
   },
   {
-    label: "Module 2 - Nuxt UI (New)",
+    label: "Module 2 - Nuxt UI",
 
     lessons: sectionTwoLessons,
     lectures: sectionTwoLessons.length,
