@@ -1,4 +1,7 @@
 <script setup>
+import lessons from "../assets/lessons.json";
+const { totalLessons } = getLessonLength(lessons);
+
 const features = ref([
   {
     title: "Basics of Nuxt",
@@ -157,11 +160,8 @@ useSeoMeta({
       </section>
       <hr class="my-12 border-white/35" />
       <section class="py-12 flex flex-col max-w-screen-md mx-auto">
-        <h2 class="font-medium text-4xl mb-4 text-center">Curriculum</h2>
-        <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
-          <CourseContent />
-        </div>
-        <p class="text-center mt-8">More lessons coming soon!</p>
+        <h2 class="font-medium text-4xl mb-8 text-center">Available Curriculum</h2>
+        <CourseContent />
       </section>
       <hr class="my-12 border-white/35" />
       <div id="purchase" class="container py-16">
@@ -169,16 +169,20 @@ useSeoMeta({
           <h1 class="text-5xl mb-4 font-bold">$49.99</h1>
           <h2 class="text-4xl mb-2 text-primary font-semibold text-center">Join Early Preview</h2>
           <p class="text-center text-wrap-balance">
-            During early preview, get at least 30% off the final price.
+            During early preview, get at least <span class="font-semibold">30%</span> off the final
+            price.
           </p>
           <hr class="my-5 w-20 border-primary border-2 items-center justify-center" />
           <div class="mb-8">
-            <p>The early preview version includes:</p>
+            <p class="text-center mb-4">The early preview version includes:</p>
             <ul class="list-disc list-inside">
-              <li>28 lessons (1 project)</li>
-              <li>3 hours of content</li>
-              <li>All future course content</li>
-              <li>Private Discord Server</li>
+              <li>{{ totalLessons }} lessons</li>
+              <li>2 hours and 30 minutes of content</li>
+              <li>
+                All future course content
+                <span class="italic text-sm">*(Next Module Release 12/23/24)</span>
+              </li>
+              <li>Access to Private Discord Server</li>
             </ul>
           </div>
           <UButton

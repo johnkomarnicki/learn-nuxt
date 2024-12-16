@@ -30,7 +30,6 @@ export default defineNuxtConfig({
   },
 
   plausible: {
-    // Prevent tracking on localhost
     domain: "learnnuxt.dev",
     ignoredHostnames: ["localhost"],
   },

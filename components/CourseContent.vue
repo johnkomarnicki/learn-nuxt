@@ -1,70 +1,121 @@
 <script setup>
-const sectionOneLessons = [
-  { lesson: 0, title: "Course Introduction" },
-  { lesson: 1, title: "What is Nuxt?" },
-  { lesson: 2, title: "Creating A Nuxt App" },
-  { lesson: 3, title: "Useful VSCode Extensions" },
-  { lesson: 4, title: "Nuxt File Directory Structure (Version 4)" },
-  { lesson: 5, title: "Installing Nuxt Modules" },
-  { lesson: 6, title: "Configuring Nuxt Modules" },
-  { lesson: 7, title: "Adding Pages (File Based Routing)" },
-  { lesson: 8, title: "Layouts" },
-  { lesson: 9, title: "Components With Nuxt" },
-  { lesson: 10, title: "Changing Pages (Nuxt-Link)" },
-  { lesson: 11, title: "Image Optimization (Nuxt Image Module)" },
-  { lesson: 12, title: "Responsive Images (Nuxt Image Module)" },
-  { lesson: 13, title: "Introduction to Data Fetching" },
-  { lesson: 14, title: "Fetching Data with useFetch() & useAsyncData()" },
-  { lesson: 15, title: "Route Params" },
-  { lesson: 16, title: "Handling Errors & Custom Error Page" },
-  { lesson: 17, title: "Handling Simple API Errors" },
-  { lesson: 18, title: "Setting Metadata With useSeoMeta()" },
-  { lesson: 19, title: "Project Cleanup" },
-  //   { lesson: 20, title: "Deploy To Vercel" },
+import lessons from "../assets/lessons.json";
+const { sectionOneLessons, sectionTwoLessons, sectionThreeLessons } = lessons;
+
+const modules = [
+  {
+    label: "Module 1 - Nuxt Basics (Recipe Application MVP)",
+    lessons: sectionOneLessons,
+    lectures: sectionOneLessons.length,
+    duration: "1 Hour 17 Min",
+  },
+  {
+    label: "Module 2 - Nuxt UI (New)",
+
+    lessons: sectionTwoLessons,
+    lectures: sectionTwoLessons.length,
+    duration: "33 Min",
+  },
+  {
+    label: "Module 3 - Server Routes",
+    badge: "New",
+    lessons: sectionThreeLessons,
+    lectures: sectionThreeLessons.length,
+    duration: "40 Min",
+    defaultOpen: true,
+  },
 ];
-const sectionTwoLessons = [
-  { lesson: 0, title: "What is Nuxt UI?" },
-  { lesson: 1, title: "Install & Setup" },
-  { lesson: 2, title: "Using Nuxt UI Components" },
-  { lesson: 3, title: "Color Theming" },
-  { lesson: 4, title: "Modifying Components" },
-  { lesson: 5, title: "Dark Mode Configuration" },
-  { lesson: 6, title: "Using Icons" },
-  { lesson: 7, title: "Configure Recipe Application With Nuxt UI" },
-];
+
+const previewModal = ref(false);
+const selectedLesson = ref();
+function setPreviewModal(lesson) {
+  selectedLesson.value = lesson;
+  previewModal.value = true;
+}
 </script>
 
 <template>
-  <div class="flex flex-col border px-6 py-4 rounded-md max-h-[400px]">
-    <h1 class="text-xl mb-2">
-      Module 1 - Nuxt Basics <span class="text-lg">(Recipe Application)</span>
-    </h1>
-    <p class="mb-4 text-sm">Learn the basics of Nuxt by building a recipe application.</p>
-    <div class="mt-auto flex flex-col gap-2 overflow-scroll">
-      <div
-        v-for="lesson in sectionOneLessons"
-        class="flex bg-gray-700/50 py-3 px-4 gap-2 rounded-md shadow"
-      >
-        <span>
-          Lesson {{ lesson.lesson + 1 }}: <span class="font-semibold">{{ lesson.title }}</span>
-        </span>
+  <UModal
+    v-model="previewModal"
+    :ui="{
+      base: 'font-Exo',
+      width: 'sm:max-w-[1000px]',
+    }"
+  >
+    <div class="p-10">
+      <div class="flex items-center mb-8">
+        <h1 class="text-2xl">{{ selectedLesson.title }}</h1>
+        <UIcon
+          @click="previewModal = false"
+          name="heroicons:x-circle-16-solid"
+          class="h-8 w-8 ml-auto cursor-pointer hover:opacity-75 duration-300"
+        />
+      </div>
+      <div class="flex flex-col p-6 items-center relative w-full pb-[56.25%] h-0">
+        <iframe
+          class="absolute top-0 left-0 w-full h-full shadow rounded-lg"
+          :src="`${selectedLesson.preview}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        >
+        </iframe>
       </div>
     </div>
-  </div>
-  <div class="flex flex-col border px-6 py-4 rounded-md max-h-[400px]">
-    <h1 class="text-xl mb-2">Module 2 - Nuxt UI</h1>
-    <p class="mb-4 text-sm">Explore Nuxt UI, a modern UI library for building web applications.</p>
-    <div class="flex flex-col gap-2 overflow-scroll">
-      <div
-        v-for="lesson in sectionTwoLessons"
-        class="flex bg-gray-700/50 py-3 px-4 gap-2 rounded-md shadow"
+  </UModal>
+  <UAccordion
+    :items="modules"
+    :ui="{
+      item: {
+        padding: 'p-0',
+      },
+    }"
+  >
+    <template #default="{ item, index, open }">
+      <UButton
+        size="xl"
+        :ui="{
+          size: {
+            xl: 'text-xl',
+          },
+          padding: {
+            xl: 'py-5 px-5',
+          },
+        }"
+        color="gray"
+        class="rounded-none"
       >
-        <span>
-          Lesson {{ lesson.lesson + 1 }}: <span class="font-semibold">{{ lesson.title }}</span>
-        </span>
+        <div class="flex items-center gap-2">
+          <span>{{ item.label }}</span>
+          <UBadge color="yellow" v-if="item.badge" :label="item.badge" />
+        </div>
+
+        <template #trailing>
+          <div class="flex gap-4 ml-auto items-center">
+            <div class="text-sm ml-auto">{{ item.lectures }} lessons • {{ item.duration }}</div>
+            <UIcon
+              name="i-heroicons-chevron-right-20-solid"
+              class="w-7 h-7 ms-auto transform transition-transform duration-200"
+              :class="[open && 'rotate-90']"
+            />
+          </div>
+        </template>
+      </UButton>
+    </template>
+    <template #item="{ item }">
+      <div class="px-5 py-3.5 bg-gray-700/50 flex gap-3 flex-col">
+        <div class="flex" v-for="lesson in item.lessons">
+          <span class="text-white flex items-center gap-3 text-lg">
+            <UIcon name="heroicons:video-camera"></UIcon>
+            <span>{{ lesson.title }}</span>
+          </span>
+          <div v-if="lesson.preview" class="ml-auto">
+            <UButton @click="setPreviewModal(lesson)" size="xs" label="Preview" />
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </template>
+  </UAccordion>
 </template>
 
 <style scoped></style>
