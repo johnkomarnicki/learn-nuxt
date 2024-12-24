@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   app: {
     head: {
       charset: "utf-8",
-      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+      viewport:
+        "width=device-width, initial-scale=1, maximum-scale=1",
       link: [
         {
           rel: "preconnect",
@@ -23,7 +24,13 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
 
-  modules: ["@nuxt/ui", "@nuxtjs/supabase", "@nuxt/image", "@nuxtjs/plausible"],
+  modules: [
+    "@nuxt/ui",
+    "@nuxtjs/supabase",
+    "@nuxt/image",
+    "@nuxtjs/plausible",
+    "@nuxtjs/seo",
+  ],
 
   colorMode: {
     preference: "dark",
@@ -36,5 +43,9 @@ export default defineNuxtConfig({
 
   supabase: {
     redirect: false,
+  },
+
+  seo: {
+    enabled: false,
   },
 });
