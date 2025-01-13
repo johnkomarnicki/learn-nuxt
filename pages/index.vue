@@ -11,7 +11,8 @@ const features = ref([
   },
   {
     title: "Advanced Nuxt Concepts",
-    description: "Dive deeper into topics like server routes, middleware, data caching, and more.",
+    description:
+      "Dive deeper into topics like server routes, middleware, data caching, and more.",
     image: "/nuxt-course-advanced-concepts.png",
   },
   {
@@ -54,17 +55,31 @@ useSeoMeta({
   <div class="hero py-24">
     <div class="container sm:max-w-screen-sm md:max-w-screen-tablet">
       <div class="flex flex-col items-center justify-center">
-        <img class="w-[75px] mb-8" src="/nuxt-icon-white.png" alt="" />
-        <UBadge label="Early Access" variant="outline" size="lg" class="mb-8 shadow-md" />
+        <img
+          class="w-[75px] mb-8"
+          src="/nuxt-icon-white.png"
+          alt=""
+        />
+        <UBadge
+          label="Early Access"
+          variant="outline"
+          size="lg"
+          class="mb-8 shadow-md"
+        />
         <h1
           class="text-wrap-balance text-center text-4xl sm:text-5xl md:text-6xl md:leading-[70px] mb-4 font-bold"
         >
           Build Modern Applications With Nuxt!
         </h1>
-        <p class="text-wrap-balance text-sm sm:text-base md:text-lg text-center mb-6">
+        <p
+          class="text-wrap-balance text-sm sm:text-base md:text-lg text-center mb-6"
+        >
           A premium
-          <span class="text-primary font-extrabold">project-based</span> course that will teach you
-          how to build applications using Nuxt.
+          <span class="text-primary font-extrabold"
+            >project-based</span
+          >
+          course that will teach you how to build applications using
+          Nuxt.
         </p>
         <div class="flex gap-2">
           <UButton
@@ -82,10 +97,18 @@ useSeoMeta({
           />
         </div>
 
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
-          <img class="w-[75px] rounded-full shadow-md" src="/author.png" alt="" />
+        <div
+          class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12"
+        >
+          <img
+            class="w-[75px] rounded-full shadow-md"
+            src="/author.png"
+            alt=""
+          />
           <div class="flex flex-col items-center sm:items-start">
-            <p class="font-bold text-lg sm:text-2xl">by John Komarnicki</p>
+            <p class="font-bold text-lg sm:text-2xl">
+              by John Komarnicki
+            </p>
             <p class="text-center text-sm sm:text-base">
               <a
                 href="https://www.youtube.com/channel/UCr0D7PVNOHqB3Td7lVl_LKw"
@@ -95,7 +118,11 @@ useSeoMeta({
                 YouTube Content Creator</a
               >
               & Founder of
-              <a href="https://www.webdevdaily.io/" target="_blank" class="text-primary underline">
+              <a
+                href="https://www.webdevdaily.io/"
+                target="_blank"
+                class="text-primary underline"
+              >
                 WebDevDaily
               </a>
             </p>
@@ -108,10 +135,15 @@ useSeoMeta({
   <div class="py-16 bg-gradient-to-b from-gray-900/50 to-gray-700/50">
     <div class="container max-w-screen-md">
       <section class="py-12">
-        <h2 class="font-medium text-4xl mb-1 text-center">What's In The Course?</h2>
-        <p class="text-lg text-center max-w-screen-tablet mx-auto text-wrap-balance">
-          Dive into building modern applications with Nuxt. The aim is to give you practical
-          insights and a realistic approach to developing production-ready applications using Nuxt.
+        <h2 class="font-medium text-4xl mb-1 text-center">
+          What's In The Course?
+        </h2>
+        <p
+          class="text-lg text-center max-w-screen-tablet mx-auto text-wrap-balance"
+        >
+          Dive into building modern applications with Nuxt. The aim is
+          to give you practical insights and a realistic approach to
+          developing production-ready applications using Nuxt.
         </p>
         <div class="flex flex-col gap-20 py-16">
           <div
@@ -121,7 +153,11 @@ useSeoMeta({
           >
             <div
               class="relative flex basis-[45%] order-2"
-              :class="index % 2 === 0 ? 'md:order-1 md:justify-start' : 'md:order-2 md:justify-end'"
+              :class="
+                index % 2 === 0
+                  ? 'md:order-1 md:justify-start'
+                  : 'md:order-2 md:justify-end'
+              "
             >
               <NuxtImg
                 v-if="index !== 1"
@@ -137,10 +173,16 @@ useSeoMeta({
               :class="index % 2 === 0 ? 'md:order-2' : 'md:order-1'"
             >
               <div class="flex mb-2 gap-2 items-center flex-wrap">
-                <h3 class="text-wrap-balance text-3xl font-medium lg:text-4xl">
+                <h3
+                  class="text-wrap-balance text-3xl font-medium lg:text-4xl"
+                >
                   {{ feature.title }}
                 </h3>
-                <UBadge size="md" v-if="index === 3" label="Coming Soon" />
+                <UBadge
+                  size="md"
+                  v-if="index === 3"
+                  label="Coming Soon"
+                />
               </div>
               <p class="text-wrap-balance text-lg">
                 {{ feature.description }}
@@ -160,27 +202,40 @@ useSeoMeta({
       </section>
       <hr class="my-12 border-white/35" />
       <section class="py-12 flex flex-col max-w-screen-md mx-auto">
-        <h2 class="font-medium text-4xl mb-8 text-center">Available Curriculum</h2>
+        <h2 class="font-medium text-4xl mb-8 text-center">
+          Available Curriculum
+        </h2>
         <CourseContent />
       </section>
       <hr class="my-12 border-white/35" />
       <div id="purchase" class="container py-16">
         <div class="flex flex-col items-center">
           <h1 class="text-5xl mb-4 font-bold">$49.99</h1>
-          <h2 class="text-4xl mb-2 text-primary font-semibold text-center">Join Early Preview</h2>
+          <h2
+            class="text-4xl mb-2 text-primary font-semibold text-center"
+          >
+            Join Early Preview
+          </h2>
           <p class="text-center text-wrap-balance">
-            During early preview, get at least <span class="font-semibold">30%</span> off the final
+            During early preview, get at least
+            <span class="font-semibold">30%</span> off the final
             price.
           </p>
-          <hr class="my-5 w-20 border-primary border-2 items-center justify-center" />
+          <hr
+            class="my-5 w-20 border-primary border-2 items-center justify-center"
+          />
           <div class="mb-8">
-            <p class="text-center mb-4">The early preview version includes:</p>
+            <p class="text-center mb-4">
+              The early preview version includes:
+            </p>
             <ul class="list-disc list-inside">
               <li>{{ totalLessons }} lessons</li>
               <li>2 hours and 30 minutes of content</li>
               <li>
                 All future course content
-                <span class="italic text-sm">*(Next Module Release 12/23/24)</span>
+                <span class="italic text-sm"
+                  >*(Next Module Release 1/15/25)</span
+                >
               </li>
               <li>Access to Private Discord Server</li>
             </ul>
