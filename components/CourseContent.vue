@@ -1,6 +1,11 @@
 <script setup>
 import lessons from "../assets/lessons.json";
-const { sectionOneLessons, sectionTwoLessons, sectionThreeLessons } = lessons;
+const {
+  sectionOneLessons,
+  sectionTwoLessons,
+  sectionThreeLessons,
+  sectionFourLessons,
+} = lessons;
 
 const modules = [
   {
@@ -18,10 +23,16 @@ const modules = [
   },
   {
     label: "Module 3 - Server Routes",
-    badge: "New",
     lessons: sectionThreeLessons,
     lectures: sectionThreeLessons.length,
     duration: "40 Min",
+  },
+  {
+    label: "Module 4 - Middleware",
+    badge: "New",
+    lessons: sectionFourLessons,
+    lectures: sectionFourLessons.length,
+    duration: "30 Min",
     defaultOpen: true,
   },
 ];
@@ -51,7 +62,9 @@ function setPreviewModal(lesson) {
           class="h-8 w-8 ml-auto cursor-pointer hover:opacity-75 duration-300"
         />
       </div>
-      <div class="flex flex-col p-6 items-center relative w-full pb-[56.25%] h-0">
+      <div
+        class="flex flex-col p-6 items-center relative w-full pb-[56.25%] h-0"
+      >
         <iframe
           class="absolute top-0 left-0 w-full h-full shadow rounded-lg"
           :src="`${selectedLesson.preview}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`"
@@ -87,12 +100,18 @@ function setPreviewModal(lesson) {
       >
         <div class="flex items-center gap-2">
           <span>{{ item.label }}</span>
-          <UBadge color="yellow" v-if="item.badge" :label="item.badge" />
+          <UBadge
+            color="yellow"
+            v-if="item.badge"
+            :label="item.badge"
+          />
         </div>
 
         <template #trailing>
           <div class="flex gap-4 ml-auto items-center">
-            <div class="text-sm ml-auto">{{ item.lectures }} lessons • {{ item.duration }}</div>
+            <div class="text-sm ml-auto">
+              {{ item.lectures }} lessons • {{ item.duration }}
+            </div>
             <UIcon
               name="i-heroicons-chevron-right-20-solid"
               class="w-7 h-7 ms-auto transform transition-transform duration-200"
@@ -110,7 +129,11 @@ function setPreviewModal(lesson) {
             <span>{{ lesson.title }}</span>
           </span>
           <div v-if="lesson.preview" class="ml-auto">
-            <UButton @click="setPreviewModal(lesson)" size="xs" label="Preview" />
+            <UButton
+              @click="setPreviewModal(lesson)"
+              size="xs"
+              label="Preview"
+            />
           </div>
         </div>
       </div>

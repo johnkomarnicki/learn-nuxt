@@ -22,6 +22,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   devtools: { enabled: true },
 
   modules: [
@@ -48,4 +49,6 @@ export default defineNuxtConfig({
   seo: {
     enabled: false,
   },
+
+  compatibilityDate: "2025-01-12",
 });

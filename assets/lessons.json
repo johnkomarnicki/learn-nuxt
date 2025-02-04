@@ -4,17 +4,29 @@
     { "lesson": 1, "title": "What is Nuxt?" },
     { "lesson": 2, "title": "Creating A Nuxt App" },
     { "lesson": 3, "title": "Useful VSCode Extensions" },
-    { "lesson": 4, "title": "Nuxt File Directory Structure (Version 4)" },
+    {
+      "lesson": 4,
+      "title": "Nuxt File Directory Structure (Version 4)"
+    },
     { "lesson": 5, "title": "Installing Nuxt Modules" },
     { "lesson": 6, "title": "Configuring Nuxt Modules" },
     { "lesson": 7, "title": "Adding Pages (File Based Routing)" },
     { "lesson": 8, "title": "Layouts" },
     { "lesson": 9, "title": "Components With Nuxt" },
     { "lesson": 10, "title": "Changing Pages (Nuxt-Link)" },
-    { "lesson": 11, "title": "Image Optimization (Nuxt Image Module)" },
-    { "lesson": 12, "title": "Responsive Images (Nuxt Image Module)" },
+    {
+      "lesson": 11,
+      "title": "Image Optimization (Nuxt Image Module)"
+    },
+    {
+      "lesson": 12,
+      "title": "Responsive Images (Nuxt Image Module)"
+    },
     { "lesson": 13, "title": "Introduction to Data Fetching" },
-    { "lesson": 14, "title": "Fetching Data with useFetch() & useAsyncData()" },
+    {
+      "lesson": 14,
+      "title": "Fetching Data with useFetch() & useAsyncData()"
+    },
     { "lesson": 15, "title": "Route Params" },
     { "lesson": 16, "title": "Handling Errors & Custom Error Page" },
     { "lesson": 17, "title": "Handling Simple API Errors" },
@@ -29,10 +41,16 @@
     { "lesson": 4, "title": "Modifying Components" },
     { "lesson": 5, "title": "Dark Mode Configuration" },
     { "lesson": 6, "title": "Using Icons" },
-    { "lesson": 7, "title": "Configure Recipe Application With Nuxt UI" }
+    {
+      "lesson": 7,
+      "title": "Configure Recipe Application With Nuxt UI"
+    }
   ],
   "sectionThreeLessons": [
-    { "title": "What Are Server Routes?", "preview": "https://player.vimeo.com/video/1039765157" },
+    {
+      "title": "What Are Server Routes?",
+      "preview": "https://player.vimeo.com/video/1039765157"
+    },
     {
       "title": "Creating a Form With Nuxt UI",
       "preview": "https://player.vimeo.com/video/1039764866"
@@ -40,9 +58,32 @@
     { "title": "Form Validation With Nuxt UI & Zod" },
     { "title": "Creating a Server Route" },
     { "title": "Setup Kit Account (Email Storage)" },
-    { "title": "Accessing Environment Variables With The Runtime Config API" },
+    {
+      "title": "Accessing Environment Variables With The Runtime Config API"
+    },
     { "title": "Adding Emails To Kit (Server Route)" },
-    { "title": "Checking If Email Already Exist On Kit (Server Route)" },
+    {
+      "title": "Checking If Email Already Exist On Kit (Server Route)"
+    },
     { "title": "Handling Our Server Route On The Frontend" }
+  ],
+  "sectionFourLessons": [
+    {
+      "title": "What is Middleware"
+    },
+    {
+      "title": "Login Form With Nuxt UI"
+    },
+    { "title": "User Authentication (useCookie())" },
+    { "title": "Basic Inline Middleware" },
+    { "title": "Handle Errors Within Middleware" },
+    {
+      "title": "Named Middleware"
+    },
+    { "title": "Global Middleware" },
+    {
+      "title": "Middleware Ordering"
+    },
+    { "title": "When Middleware Runs" }
   ]
 }

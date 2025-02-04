@@ -230,13 +230,9 @@ useSeoMeta({
             </p>
             <ul class="list-disc list-inside">
               <li>{{ totalLessons }} lessons</li>
-              <li>2 hours and 30 minutes of content</li>
-              <li>
-                All future course content
-                <span class="italic text-sm"
-                  >*(Next Module Release 1/15/25)</span
-                >
-              </li>
+              <li>3 hours of content</li>
+
+              <li>All future course content</li>
               <li>Access to Private Discord Server</li>
             </ul>
           </div>
