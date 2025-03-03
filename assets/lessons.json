@@ -93,7 +93,10 @@
     {
       "title": "Setup Supabase Project"
     },
-    { "title": "Integrate Supabase Into Nuxt (Nuxt Supabase Module)" },
+    {
+      "title": "Integrate Supabase Into Nuxt (Nuxt Supabase Module)",
+      "preview": "https://player.vimeo.com/video/1062091330"
+    },
     { "title": "Setup Authentication (signInWithOpt())" },
     { "title": "Confirm Route" },
     {
