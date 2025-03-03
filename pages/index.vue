@@ -29,7 +29,7 @@ const features = ref([
   {
     title: "Project Building",
     description:
-      "Apply your knowledge by creating several applications, including a full-stack app using Nuxt, Supabase, and Stripe.",
+      "Apply your knowledge by creating two applications, including a full-stack app using Nuxt, Supabase, and Stripe.",
     image: "/nuxt-course-project-building.png",
   },
 ]);
@@ -55,11 +55,7 @@ useSeoMeta({
   <div class="hero py-24">
     <div class="container sm:max-w-screen-sm md:max-w-screen-tablet">
       <div class="flex flex-col items-center justify-center">
-        <img
-          class="w-[75px] mb-8"
-          src="/nuxt-icon-white.png"
-          alt=""
-        />
+        <img class="w-[75px] mb-8" src="/nuxt-icon-white.png" alt="" />
         <UBadge
           label="Early Access"
           variant="outline"
@@ -75,11 +71,21 @@ useSeoMeta({
           class="text-wrap-balance text-sm sm:text-base md:text-lg text-center mb-6"
         >
           A premium
-          <span class="text-primary font-extrabold"
-            >project-based</span
-          >
+          <span class="text-primary font-bold">project-based</span>
           course that will teach you how to build applications using
-          Nuxt.
+          <ULink
+            href="https://nuxt.com/"
+            class="text-primary font-bold underline"
+          >
+            Nuxt
+          </ULink>
+          &
+          <ULink
+            href="https://supabase.com/"
+            class="text-primary font-bold underline"
+          >
+            Supabase </ULink
+          >.
         </p>
         <div class="flex gap-2">
           <UButton
@@ -90,7 +96,7 @@ useSeoMeta({
             label="Login"
           />
           <UButton
-            to="https://john-komarnicki.teachable.com/purchase?product_id=5955613"
+            to="https://john-komarnicki.teachable.com/purchase?product_id=6139354"
             target="_blank"
             size="xl"
             label="Purchase now"
@@ -106,9 +112,7 @@ useSeoMeta({
             alt=""
           />
           <div class="flex flex-col items-center sm:items-start">
-            <p class="font-bold text-lg sm:text-2xl">
-              by John Komarnicki
-            </p>
+            <p class="font-bold text-lg sm:text-2xl">by John Komarnicki</p>
             <p class="text-center text-sm sm:text-base">
               <a
                 href="https://www.youtube.com/channel/UCr0D7PVNOHqB3Td7lVl_LKw"
@@ -141,9 +145,10 @@ useSeoMeta({
         <p
           class="text-lg text-center max-w-screen-tablet mx-auto text-wrap-balance"
         >
-          Dive into building modern applications with Nuxt. The aim is
-          to give you practical insights and a realistic approach to
-          developing production-ready applications using Nuxt.
+          Dive into modern web development with Nuxt and Supabase. Start by
+          building a Recipe App MVP, mastering the fundamentals of Nuxt along
+          the way. Then, explore advanced Nuxt concepts before transforming the
+          app into a fully functional CRUD application powered by Supabase.
         </p>
         <div class="flex flex-col gap-20 py-16">
           <div
@@ -173,16 +178,10 @@ useSeoMeta({
               :class="index % 2 === 0 ? 'md:order-2' : 'md:order-1'"
             >
               <div class="flex mb-2 gap-2 items-center flex-wrap">
-                <h3
-                  class="text-wrap-balance text-3xl font-medium lg:text-4xl"
-                >
+                <h3 class="text-wrap-balance text-3xl font-medium lg:text-4xl">
                   {{ feature.title }}
                 </h3>
-                <UBadge
-                  size="md"
-                  v-if="index === 3"
-                  label="Coming Soon"
-                />
+                <UBadge size="md" v-if="index === 3" label="Coming Soon" />
               </div>
               <p class="text-wrap-balance text-lg">
                 {{ feature.description }}
@@ -210,34 +209,29 @@ useSeoMeta({
       <hr class="my-12 border-white/35" />
       <div id="purchase" class="container py-16">
         <div class="flex flex-col items-center">
-          <h1 class="text-5xl mb-4 font-bold">$49.99</h1>
-          <h2
-            class="text-4xl mb-2 text-primary font-semibold text-center"
-          >
+          <h1 class="text-5xl mb-4 font-bold">$69.99</h1>
+          <h2 class="text-4xl mb-2 text-primary font-semibold text-center">
             Join Early Preview
           </h2>
           <p class="text-center text-wrap-balance">
             During early preview, get at least
-            <span class="font-semibold">30%</span> off the final
-            price.
+            <span class="font-semibold">30%</span> off the final price.
           </p>
           <hr
             class="my-5 w-20 border-primary border-2 items-center justify-center"
           />
           <div class="mb-8">
-            <p class="text-center mb-4">
-              The early preview version includes:
-            </p>
+            <p class="text-center mb-4">The early preview version includes:</p>
             <ul class="list-disc list-inside">
               <li>{{ totalLessons }} lessons</li>
-              <li>3 hours of content</li>
+              <li>3.5 hours of content</li>
 
               <li>All future course content</li>
               <li>Access to Private Discord Server</li>
             </ul>
           </div>
           <UButton
-            to="https://john-komarnicki.teachable.com/purchase?product_id=5955613"
+            to="https://john-komarnicki.teachable.com/purchase?product_id=6139354"
             target="_blank"
             size="xl"
             label="Purchase now"

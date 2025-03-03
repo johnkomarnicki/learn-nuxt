@@ -5,6 +5,7 @@ const {
   sectionTwoLessons,
   sectionThreeLessons,
   sectionFourLessons,
+  sectionFiveLessons,
 } = lessons;
 
 const modules = [
@@ -29,10 +30,17 @@ const modules = [
   },
   {
     label: "Module 4 - Middleware",
-    badge: "New",
     lessons: sectionFourLessons,
     lectures: sectionFourLessons.length,
     duration: "30 Min",
+    defaultOpen: false,
+  },
+  {
+    label: "Module 5 - Basic Authentication With Supabase",
+    badge: "New",
+    lessons: sectionFiveLessons,
+    lectures: sectionFiveLessons.length,
+    duration: "34 Min",
     defaultOpen: true,
   },
 ];
@@ -100,11 +108,7 @@ function setPreviewModal(lesson) {
       >
         <div class="flex items-center gap-2">
           <span>{{ item.label }}</span>
-          <UBadge
-            color="yellow"
-            v-if="item.badge"
-            :label="item.badge"
-          />
+          <UBadge color="yellow" v-if="item.badge" :label="item.badge" />
         </div>
 
         <template #trailing>

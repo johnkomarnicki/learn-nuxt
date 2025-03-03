@@ -85,5 +85,24 @@
       "title": "Middleware Ordering"
     },
     { "title": "When Middleware Runs" }
+  ],
+  "sectionFiveLessons": [
+    {
+      "title": "What is Supabase"
+    },
+    {
+      "title": "Setup Supabase Project"
+    },
+    { "title": "Integrate Supabase Into Nuxt (Nuxt Supabase Module)" },
+    { "title": "Setup Authentication (signInWithOpt())" },
+    { "title": "Confirm Route" },
+    {
+      "title": "Redirect Configuration"
+    },
+    { "title": "Testing Signing Up/Signing In" },
+    {
+      "title": "Profile Menu (Nuxt UI)"
+    },
+    { "title": "Logging Out" }
   ]
 }
