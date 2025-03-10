@@ -6,6 +6,7 @@ const {
   sectionThreeLessons,
   sectionFourLessons,
   sectionFiveLessons,
+  sectionSixLessons,
 } = lessons;
 
 const modules = [
@@ -37,10 +38,17 @@ const modules = [
   },
   {
     label: "Module 5 - Basic Authentication With Supabase",
-    badge: "New",
+
     lessons: sectionFiveLessons,
     lectures: sectionFiveLessons.length,
-    duration: "34 Min",
+    duration: "36 Min",
+  },
+  {
+    label: "Module 6 - OAuth (Google) With Supabase",
+    badge: "New",
+    lessons: sectionSixLessons,
+    lectures: sectionSixLessons.length,
+    duration: "13 Min",
     defaultOpen: true,
   },
 ];

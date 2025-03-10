@@ -106,6 +106,20 @@
     {
       "title": "Profile Menu (Nuxt UI)"
     },
-    { "title": "Logging Out" }
+    { "title": "Logging Out" },
+    { "title": "Updating Email Content & OTP Config" }
+  ],
+  "sectionSixLessons": [
+    {
+      "title": "What is OAuth?"
+    },
+    {
+      "title": "Configure Google Cloud & Supabase"
+    },
+    {
+      "title": "Setup OAuth With Google (signInWithOAuth)"
+    },
+    { "title": "Testing OAuth" },
+    { "title": "Authentication Loading State" }
   ]
 }

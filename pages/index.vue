@@ -201,9 +201,10 @@ useSeoMeta({
       </section>
       <hr class="my-12 border-white/35" />
       <section class="py-12 flex flex-col max-w-screen-md mx-auto">
-        <h2 class="font-medium text-4xl mb-8 text-center">
-          Available Curriculum
-        </h2>
+        <div class="mb-8 text-center">
+          <h2 class="font-medium text-4xl text-center">Available Curriculum</h2>
+          <p><i>*Next Module Release: 3/17/25</i></p>
+        </div>
         <CourseContent />
       </section>
       <hr class="my-12 border-white/35" />
@@ -226,7 +227,7 @@ useSeoMeta({
               <li>{{ totalLessons }} lessons</li>
               <li>3.5 hours of content</li>
 
-              <li>All future course content</li>
+              <li>All future course content></li>
               <li>Access to Private Discord Server</li>
             </ul>
           </div>
