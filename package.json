@@ -2,12 +2,11 @@
   "name": "nuxt-app",
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxt/image": "^1.7.0",
+    "@nuxt/image": "^1.9.0",
     "@nuxt/ui": "^2.18.4",
     "@nuxtjs/plausible": "^1.0.2",
-    "@nuxtjs/seo": "^2.0.2",
-    "@nuxtjs/supabase": "^1.1.2",
-    "nuxt": "^3.13.0"
+    "@nuxtjs/seo": "^2.2.0",
+    "nuxt": "^3.16.0"
   },
   "private": true,
   "scripts": {

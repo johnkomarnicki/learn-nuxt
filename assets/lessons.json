@@ -121,5 +121,42 @@
     },
     { "title": "Testing OAuth" },
     { "title": "Authentication Loading State" }
+  ],
+  "sectionSevenLessons": [
+    {
+      "title": "Creating a Profile Table In Supabase"
+    },
+    {
+      "title": "Creating a Database Function"
+    },
+    {
+      "title": "Setting Up a Database Trigger"
+    },
+    { "title": "Generating Database Types" },
+    { "title": "Profile State Composable With useState()" },
+    {
+      "title": "Initializing Profile State With callOnce()"
+    },
+    {
+      "title": "Creating Profile Page"
+    },
+    {
+      "title": "Handling Profile Page Errors"
+    },
+    { "title": "Detecting Users Profile Page" },
+    { "title": "Profile Settings Form" },
+    { "title": "Local Avatar Upload" },
+    {
+      "title": "Creating a Supabase Storage Bucket"
+    },
+    {
+      "title": "Uploading Profile Avatar To Supabase Storage"
+    },
+    {
+      "title": "Updating Profile Information"
+    },
+    {
+      "title": "Module Cleanup"
+    }
   ]
 }
