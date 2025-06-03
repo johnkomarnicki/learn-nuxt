@@ -124,10 +124,12 @@
   ],
   "sectionSevenLessons": [
     {
-      "title": "Creating a Profile Table In Supabase"
+      "title": "Creating a Profile Table In Supabase",
+      "preview": "https://player.vimeo.com/video/1090192367"
     },
     {
-      "title": "Creating a Database Function"
+      "title": "Creating a Database Function",
+      "preview": "https://player.vimeo.com/video/1090193065"
     },
     {
       "title": "Setting Up a Database Trigger"
