@@ -8,6 +8,7 @@ const {
   sectionFiveLessons,
   sectionSixLessons,
   sectionSevenLessons,
+  sectionEightLessons,
 } = lessons;
 
 const modules = [
@@ -53,10 +54,17 @@ const modules = [
   },
   {
     label: "Module 7 - Profile Page With Supabase",
-    badge: "New",
     lessons: sectionSevenLessons,
     lectures: sectionSevenLessons.length,
     duration: "1 Hour 15 Min",
+    defaultOpen: false,
+  },
+  {
+    label: "Module 8 - Recipe Creator",
+    badge: "New",
+    lessons: sectionEightLessons,
+    lectures: sectionEightLessons.length,
+    duration: "52 Min",
     defaultOpen: true,
   },
 ];

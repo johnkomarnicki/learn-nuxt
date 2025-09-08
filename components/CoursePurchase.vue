@@ -6,7 +6,9 @@ const { totalLessons } = getLessonLength(lessons);
 <template>
   <div id="purchase" class="container py-16">
     <div class="flex flex-col items-center">
-      <h1 class="text-5xl mb-4 font-bold">$69.99</h1>
+      <h1 class="flex flex-row items-center gap-2 text-5xl mb-4 font-bold">
+        <span class="line-through text-3xl -rotate-6">$69.99</span>$39.99
+      </h1>
       <h2 class="text-4xl mb-2 text-primary font-semibold text-center">
         Join Early Preview
       </h2>
@@ -21,13 +23,13 @@ const { totalLessons } = getLessonLength(lessons);
         <p class="text-center mb-4">The early preview version includes:</p>
         <ul class="list-disc list-inside">
           <li>{{ totalLessons }} lessons</li>
-          <li>4.5+ hours of content</li>
+          <li>5.5+ hours of content</li>
           <li>Future course content</li>
           <li>Private Discord Server</li>
         </ul>
       </div>
       <UButton
-        to="https://john-komarnicki.teachable.com/purchase?product_id=6139354"
+        to="https://john-komarnicki.teachable.com/purchase?product_id=6443243"
         target="_blank"
         size="xl"
         label="Purchase now"

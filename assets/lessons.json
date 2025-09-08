@@ -160,5 +160,24 @@
     {
       "title": "Module Cleanup"
     }
+  ],
+  "sectionEightLessons": [
+    {
+      "title": "Creating Recipes Table & Storage Bucket In Supabase"
+    },
+    {
+      "title": "Create Recipe Page"
+    },
+    {
+      "title": "Constructing Recipe From (Recipe Image Form Field)"
+    },
+    { "title": "Constructing Recipe Form (Additional Form Fields)" },
+    { "title": "Custom Form Validation" },
+    {
+      "title": "Handling Recipe Form Submissions"
+    },
+    {
+      "title": "Recipe From Testing & Cleanup"
+    }
   ]
 }

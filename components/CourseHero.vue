@@ -70,7 +70,7 @@ const previewModal = ref(false);
             label="Preview"
           />
           <UButton
-            to="https://john-komarnicki.teachable.com/purchase?product_id=6139354"
+            to="https://john-komarnicki.teachable.com/purchase?product_id=6443243"
             target="_blank"
             size="xl"
             label="Purchase now"
