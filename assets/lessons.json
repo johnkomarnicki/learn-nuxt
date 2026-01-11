@@ -179,5 +179,33 @@
     {
       "title": "Recipe From Testing & Cleanup"
     }
+  ],
+  "sectionNineLessons": [
+    {
+      "title": "Fetch Recipes From Supabase"
+    },
+    {
+      "title": "Display Recipes"
+    },
+    {
+      "title": "Update Create Recipe Form"
+    },
+    { "title": "Seed Recipes Table" },
+    { "title": "Modify Recipe Fetch" },
+    {
+      "title": "Edit Recipe Modal"
+    },
+    {
+      "title": "Recipe Form Component"
+    },
+    {
+      "title": "Use Recipe Form Component"
+    },
+    {
+      "title": "Delete Recipes"
+    },
+    {
+      "title": "Update Data On Edit and Delete"
+    }
   ]
 }

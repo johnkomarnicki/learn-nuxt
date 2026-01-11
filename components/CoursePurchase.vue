@@ -23,7 +23,7 @@ const { totalLessons } = getLessonLength(lessons);
         <p class="text-center mb-4">The early preview version includes:</p>
         <ul class="list-disc list-inside">
           <li>{{ totalLessons }} lessons</li>
-          <li>5.5+ hours of content</li>
+          <li>6.5+ hours of content</li>
           <li>Future course content</li>
           <li>Private Discord Server</li>
         </ul>

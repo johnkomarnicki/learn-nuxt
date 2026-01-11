@@ -9,6 +9,7 @@ const {
   sectionSixLessons,
   sectionSevenLessons,
   sectionEightLessons,
+  sectionNineLessons,
 } = lessons;
 
 const modules = [
@@ -61,10 +62,17 @@ const modules = [
   },
   {
     label: "Module 8 - Recipe Creator",
-    badge: "New",
     lessons: sectionEightLessons,
     lectures: sectionEightLessons.length,
     duration: "52 Min",
+    defaultOpen: false,
+  },
+  {
+    label: "Module 9 - Recipe CRUD Capabilities",
+    badge: "New",
+    lessons: sectionNineLessons,
+    lectures: sectionNineLessons.length,
+    duration: "1 Hour 2 Min",
     defaultOpen: true,
   },
 ];
